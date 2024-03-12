@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cortel_flutter_app/login_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Initiate Nene Cortel Inc.',
+      title: 'Carol Square Plaza',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -88,18 +89,27 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 // Add your login logic here
               },
-              child: Text('Login')),
-              Text('Or sign in with:'),
-              ElevatedButton(
-                onPressed: (){
-                  print('google is clicked');
-                },
-              child: Row(
-                children: [Image.asset('assets/images/download.jpg'),
-                Text('Log in with google')
-                ],
-              ),
+              child: Text('Login'),
+            ),
+            Text('Or Sign in With'),
+            ElevatedButton(onPressed: () {
+              print('google is clicked');
+              },
+              child: Row(children: [
+                Image.asset('images/google1.png', height: 22, width: 22,
                 ),
+                Text('Log in with google'),
+                ],
+                )),
+            ElevatedButton(onPressed: () {
+              print('google is clicked');
+              },
+              child: Row(children: [
+                Image.asset('images/facebook.png', height: 22, width: 22,
+                ),
+                Text('Log in with Facebook'),
+                ],
+                ))
           ],
         ),
       ),
