@@ -1,109 +1,157 @@
 import 'package:flutter/material.dart';
+import 'package:cortel_flutter_app/app_color.dart';
 
-// void main() {
-//   runApp(MyApp());
-// }
+//import 'package:flutter/widgets.dart';
 
-// class MyApp extends StatelessWidget{
-//   @override
-//   Widget build(Object context){
-//     return MaterialApp(
-//       home: loginPage(),
-//     );
-//   }
-// }
-
-class loginPage extends StatelessWidget
-{
-  const loginPage({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blue,
-        body: Column(
-          children: [
-            Text('Hello, Welcome Back!'),
-              style: TextStyle(
-                color: White.white,
-                fontSize: 22,
-                fontWeight: fontWeight.bold,
+      backgroundColor: Color.fromARGB(255, 4, 85, 151),
+      body: Padding(
+          padding: EdgeInsets.all(24),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 24,
+              ),
+              Text(
+                'Hello Welcome Back!',
+                style: TextStyle(
+                  color: AppColor.font,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text('log-in to continue'),
+              SizedBox(
+                height: 20,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    hintText: 'Username',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(50))),
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.5)),
               ),
               SizedBox(
-                height: 16,
-              )
-            Text('Log-in to continue',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 12,
-              
-            )),
-            TextField(
-              decoration: InputDecoration(hintText: 'Username',
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(12)))),
-                filled: true,
-                fillColor: Colors.white.withOpacity(0.5),
-            ),
-            TextField(
-              decoration: InputDecoration(hintText: 'Password',
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(12)))),
-                filled: true,
-                fillColor: Colors.white.withOpacity(0.5),
-              )),
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton
-              onPressed: () {
-                print('Forgot is clicked');
-              },
-              child: Text('Forgot Password'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                print('Login is clicked');
-              },
-              child: Text('Log In'),
-            ),
-            Text('Or sign in with:'),
-            ElevatedButton(
-              onPressed: () {
-                print('google is clicked');
-              },
-              child: Row(
-                children: [
-                  Image.asset(
-                    'images/google.jpg',
-                    height: 22,
-                    width: 22,
+                height: 20,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    hintText: 'Password',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(50))),
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.5)),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {
+                    print('Forgot is clicked');
+                  },
+                  child: Text(
+                    'Forgot Password',
+                    style: TextStyle(
+                      color: AppColor.font,
+                    ),
                   ),
-                  Text('Log in with Google'),
-                ],
-              )),
-            ElevatedButton(
-              onPressed: () {
-                print('Facebook is clicked');
-              },
-              child: Row(
-                children: [
-                  Image.asset(
-                    'images/facebook.png',
-                    height: 22,
-                    width: 22,
+                ),
+              ),
+              SizedBox(
+                width: 250,
+                child: ElevatedButton(
+                  onPressed: () {
+                    print('login is clicked');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 7, 192, 78),
+                    foregroundColor: Colors.white,
                   ),
-                  Text('Log in with Facebook'),
-                ],
-              )),
+                  child: Text('Log in'),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'Or sign in with:',
+                style: TextStyle(
+                  color: AppColor.font,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  print('google is clicked');
+                },
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'images/google.jpg',
+                      height: 22,
+                      width: 22,
+                    ),
+                    Text(
+                      'Log in with google',
+                      style: TextStyle(
+                        color: AppColor.font,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  print('Facebook is clicked');
+                },
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'images/facebook.webp',
+                      height: 30,
+                      width: 22,
+                    ),
+                    Text(
+                      'Log in with facebook',
+                      style: TextStyle(
+                        color: AppColor.font,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Row(
                 children: [
-                  Text("Don't have an account? "),
-                  TextButton(onPressed: () {}, child: Text('Sign up'))
+                  Text(
+                    'Dont have an account:',
+                    style: TextStyle(
+                      color: AppColor.font,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Sign up',
+                      style: TextStyle(
+                        color: AppColor.font,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
                 ],
-              )
-          ]
-        ),
+              ),
+            ],
+          )),
     );
-    }
   }
+}
