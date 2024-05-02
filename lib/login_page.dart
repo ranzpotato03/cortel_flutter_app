@@ -1,6 +1,7 @@
 import 'package:cortel_flutter_app/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cortel_flutter_app/app_color.dart';
+import 'package:flutter/widgets.dart';
 
 //import 'package:flutter/widgets.dart';
 
@@ -64,21 +65,23 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-              width: 250,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyHomePage(title: 'My HomePage')),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColor.primary,
-                  foregroundColor: Colors.white,
-                ), 
-                child: Text('Log in'),
+                width: 250,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              TravelBlogHomePage ()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColor.primary,
+                    foregroundColor: Colors.white,
+                  ),
+                  child: Text('Log in'),
+                ),
               ),
-            ),
               SizedBox(
                 height: 20,
               ),
