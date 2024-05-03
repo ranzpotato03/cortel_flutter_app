@@ -16,64 +16,72 @@ class HomePage extends StatelessWidget {
           // Twitter IconButton removed
         ],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end, // Align at the bottom
-        children: [
-          Expanded(
-            child: Column(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/ramenbowl.jpg'), // Replace with your image path
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end, // Align at the bottom
+          children: [
+            Expanded(
+              child: Column(
+                children: [
+                  Image.asset('images/ramen.png',
+                      height: 80,
+                      width: 80), // Replace with your logo
+                  Text(
+                    'A BOWL OF LOVE FROM JAPANESE CUISINE FOR YOU',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  Text(
+                    'Ramen is a traditional Japanese noodle soup. It consists of Chinese wheat noodles served in a meat or fish-based broth & uses toppings such as sliced pork, nori, menma, and scallions.',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Implement Order Now functionality
+                    },
+                    child: Text('Order Now'),
+                  ),
+                  SizedBox(height: 20),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Image.asset('images/ramen.png',
-                    height: 80,
-                    width: 80), // Replace with your logo
-                Text(
-                  'A BOWL OF LOVE FROM JAPANESE CUISINE FOR YOU',
-                  style: TextStyle(fontSize: 18),
-                ),
-                Text(
-                  'Ramen is a traditional Japanese noodle soup. It consists of Chinese wheat noodles served in a meat or fish-based broth & uses toppings such as sliced pork, nori, menma, and scallions.',
-                  style: TextStyle(fontSize: 16),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
+                TextButton(
                   onPressed: () {
-                    // Implement Order Now functionality
+                    // Implement Home link functionality
                   },
-                  child: Text('Order Now'),
+                  child: Text('Home'),
                 ),
-                SizedBox(height: 20),
+                TextButton(
+                  onPressed: () {
+                    // Implement Menu link functionality
+                  },
+                  child: Text('Menu'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    // Implement Our Story link functionality
+                  },
+                  child: Text('Our Story'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    // Implement Contact Us link functionality
+                  },
+                  child: Text('Contact Us'),
+                ),
               ],
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              TextButton(
-                onPressed: () {
-                  // Implement Home link functionality
-                },
-                child: Text('Home'),
-              ),
-              TextButton(
-                onPressed: () {
-                  // Implement Menu link functionality
-                },
-                child: Text('Menu'),
-              ),
-              TextButton(
-                onPressed: () {
-                  // Implement Our Story link functionality
-                },
-                child: Text('Our Story'),
-              ),
-              TextButton(
-                onPressed: () {
-                  // Implement Contact Us link functionality
-                },
-                child: Text('Contact Us'),
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
