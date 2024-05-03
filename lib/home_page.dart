@@ -17,26 +17,33 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.end, // Align at the bottom
         children: [
-          Image.asset('images/ramen.png',
-          height: 80,
-          width: 80), // Replace with your logo
-          Text(
-            'A BOWL OF LOVE FROM JAPANESE CUISINE FOR YOU',
-            style: TextStyle(fontSize: 18),
+          Expanded(
+            child: Column(
+              children: [
+                Image.asset('images/ramen.png',
+                    height: 80,
+                    width: 80), // Replace with your logo
+                Text(
+                  'A BOWL OF LOVE FROM JAPANESE CUISINE FOR YOU',
+                  style: TextStyle(fontSize: 18),
+                ),
+                Text(
+                  'Ramen is a traditional Japanese noodle soup. It consists of Chinese wheat noodles served in a meat or fish-based broth & uses toppings such as sliced pork, nori, menma, and scallions.',
+                  style: TextStyle(fontSize: 16),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    // Implement Order Now functionality
+                  },
+                  child: Text('Order Now'),
+                ),
+                SizedBox(height: 20),
+              ],
+            ),
           ),
-          Text(
-            'Ramen is a traditional Japanese noodle soup. It consists of Chinese wheat noodles served in a meat or fish-based broth & uses toppings such as sliced pork, nori, menma, and scallions.',
-            style: TextStyle(fontSize: 16),
-          ),
-          SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              // Implement Order Now functionality
-            },
-            child: Text('Order Now'),
-          ),
-          SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
