@@ -72,7 +72,7 @@ class LoginPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              TravelBlogHomePage ()),
+                              HomePage ()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

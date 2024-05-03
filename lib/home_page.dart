@@ -1,81 +1,68 @@
 import 'package:flutter/material.dart';
-import 'app_color.dart';
 
-class TravelBlogHomePage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Travel Blog'),
+        title: Text('A NO RI ラーメン'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.facebook),
+            onPressed: () {
+              // Implement Facebook link functionality
+            },
+          ),
+          // Twitter IconButton removed
+        ],
       ),
       body: Column(
         children: [
-          Container(
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/background.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
+          Image.asset('images/ramen.png',
+          height: 80,
+          width: 80), // Replace with your logo
+          Text(
+            'A BOWL OF LOVE FROM JAPANESE CUISINE FOR YOU',
+            style: TextStyle(fontSize: 18),
           ),
           Text(
-            'Explore Philippines',
-            style: TextStyle(
-              color: Color.fromARGB(255, 224, 12, 12),
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
+            'Ramen is a traditional Japanese noodle soup. It consists of Chinese wheat noodles served in a meat or fish-based broth & uses toppings such as sliced pork, nori, menma, and scallions.',
+            style: TextStyle(fontSize: 16),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              // Implement Order Now functionality
+            },
+            child: Text('Order Now'),
+          ),
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  'Welcome to our Travel Blog!',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+              TextButton(
+                onPressed: () {
+                  // Implement Home link functionality
+                },
+                child: Text('Home'),
               ),
-              SizedBox(height: 16),
-              Container(
-                height: 300,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 3,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      width: 200,
-                      margin: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/post$index.jpg'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            bottom: 16,
-                            left: 16,
-                            child: Text(
-                              'Featured Post $index',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
+              TextButton(
+                onPressed: () {
+                  // Implement Menu link functionality
+                },
+                child: Text('Menu'),
+              ),
+              TextButton(
+                onPressed: () {
+                  // Implement Our Story link functionality
+                },
+                child: Text('Our Story'),
+              ),
+              TextButton(
+                onPressed: () {
+                  // Implement Contact Us link functionality
+                },
+                child: Text('Contact Us'),
               ),
             ],
           ),
