@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(Object context){
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Urbanist'),
       home: LoginPage()
     );
