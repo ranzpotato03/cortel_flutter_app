@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:cortel_flutter_app/app_color.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -9,9 +9,9 @@ class HomePage extends StatelessWidget {
         title: Text(
           'Cake Shop',
           style: TextStyle(
-              color: Color.fromARGB(255, 224, 27, 195)), // Custom text color
+              color: AppColor.font), // Custom text color
         ),
-        backgroundColor: Color.fromARGB(255, 8, 235, 231), // Custom appbar color
+        backgroundColor: AppColor.primary, // Custom appbar color
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                     'Home',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Color.fromARGB(255, 73, 181, 224),
+                      color: AppColor.font4,
                     ),
                   ),
                 ),
@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
                     'About',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Color.fromARGB(255, 67, 211, 222),
+                      color: AppColor.font4,
                     ),
                   ),
                 ),
@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
                     'Contact',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Color.fromARGB(255, 70, 192, 230),
+                      color: AppColor.font4,
                     ),
                   ),
                 ),
@@ -84,7 +84,7 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 49, 225, 67),
+                      color: AppColor.font3,
                     ),
                   ),
                   SizedBox(height: 10),
@@ -93,7 +93,7 @@ class HomePage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16,
-                      color: Color.fromARGB(255, 94, 225, 71),
+                      color: AppColor.font3,
                     ),
                   ),
                   SizedBox(height: 20),
@@ -188,7 +188,7 @@ class ProductItem extends StatelessWidget {
         subtitle: Text(
           price,
           style: TextStyle(
-            color: Colors.blue,
+            color: AppColor.font3,
             fontWeight: FontWeight.bold,
           ),
         ),

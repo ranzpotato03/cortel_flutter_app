@@ -23,7 +23,7 @@ class LoginPage extends StatelessWidget {
               Text(
                 "AveLona's Cake Shop",
                 style: TextStyle(
-                  color: Color.fromARGB(255, 227, 21, 238),
+                  color: AppColor.font,
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
                 ),
@@ -67,7 +67,7 @@ class LoginPage extends StatelessWidget {
                   child: Text(
                     'Forgot Password',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 255, 4, 217),
+                      color: AppColor.font2,
                     ),
                   ),
                 ),
@@ -82,7 +82,7 @@ class LoginPage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 227, 13, 177),
+                    backgroundColor: AppColor.font,
                     foregroundColor: Colors.white,
                   ),
                   child: Text('Log in'),
@@ -92,7 +92,7 @@ class LoginPage extends StatelessWidget {
               Text(
                 'Or sign in with:',
                 style: TextStyle(
-                  color: Color.fromARGB(255, 239, 11, 182),
+                  color: AppColor.primary,
                 ),
               ),
               SizedBox(height: 20),
@@ -110,7 +110,7 @@ class LoginPage extends StatelessWidget {
                     Text(
                       'Log in with google',
                       style: TextStyle(
-                        color: Color.fromARGB(255, 231, 7, 175),
+                        color: AppColor.font,
                       ),
                     ),
                   ],
@@ -131,7 +131,7 @@ class LoginPage extends StatelessWidget {
                     Text(
                       'Log in with facebook',
                       style: TextStyle(
-                        color: Color.fromARGB(255, 233, 6, 172),
+                        color: AppColor.font,
                       ),
                     ),
                   ],
@@ -143,7 +143,7 @@ class LoginPage extends StatelessWidget {
                   Text(
                     'Dont have an account:',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 232, 9, 202),
+                      color: AppColor.font,
                     ),
                   ),
                   TextButton(
@@ -151,7 +151,7 @@ class LoginPage extends StatelessWidget {
                     child: Text(
                       'Sign up',
                       style: TextStyle(
-                        color: Color.fromARGB(255, 225, 18, 215),
+                        color: AppColor.font2,
                         decoration: TextDecoration.underline,
                       ),
                     ),

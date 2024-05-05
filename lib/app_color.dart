@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class AppColor
-{
-  static const primary = Color(0xffFBD512);
-  static const font = Color(0xffD8D8D8);
-  static const font2 = Color(0xff373737);
+class AppColor {
+  static const primary = Color.fromARGB(255, 33, 174, 230);
+  static const font = Color.fromARGB(255, 235, 9, 223);
+  static const font2 = Color.fromARGB(255, 189, 32, 236);
+  static const font3 = Color.fromARGB(255, 49, 225, 67);
+  static const font4 = Color.fromARGB(255, 252, 193, 33);
   static const disableFont = Color(0xffA7A7A7);
   static const disableButton = Color(0xff303030);
   static const background = Color(0xff1A2947);
