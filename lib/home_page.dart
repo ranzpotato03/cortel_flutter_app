@@ -1,23 +1,77 @@
 import 'package:flutter/material.dart';
 import 'package:cortel_flutter_app/app_color.dart';
+import 'package:cortel_flutter_app/cart_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final List<ProductItem> _cartItems = [];
+
+  void _addItemToCart(ProductItem item) {
+    setState(() {
+      _cartItems.add(item);
+    });
+  }
+
+  void _navigateToCart() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => CartPage(initialCartItems: _cartItems),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Stack(
+            children: [
+              IconButton(
+                icon: Icon(Icons.shopping_basket),
+                onPressed: _navigateToCart,
+              ),
+              if (_cartItems.isNotEmpty)
+                Positioned(
+                  right: 0,
+                  child: Container(
+                    padding: EdgeInsets.all(1),
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    constraints: BoxConstraints(
+                      minWidth: 12,
+                      minHeight: 12,
+                    ),
+                    child: Text(
+                      '${_cartItems.length}',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 8,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ],
         title: Text(
           'Cake Shop',
-          style: TextStyle(
-              color: AppColor.font), // Custom text color
+          style: TextStyle(color: AppColor.font), // Custom text color
         ),
         backgroundColor: AppColor.primary, // Custom appbar color
       ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-                'images/backgorung.jpg'), // Replace with your image path
+            image: AssetImage('images/backgorung.jpg'), // Replace with your image path
             fit: BoxFit.cover,
           ),
         ),
@@ -110,36 +164,42 @@ class HomePage extends StatelessWidget {
                     name: 'Chocolate Cake',
                     price: '\$5.99',
                     imageUrl: 'images/chocolatecake.jpg',
+                    onAddToCart: _addItemToCart,
                   ),
                   SizedBox(height: 10),
                   ProductItem(
                     name: 'Red Velvet',
                     price: '\$7.49',
                     imageUrl: 'images/redvelvet.jpg',
+                    onAddToCart: _addItemToCart,
                   ),
                   SizedBox(height: 10),
                   ProductItem(
                     name: 'Carrot Cake',
                     price: '\$6.99',
                     imageUrl: 'images/carrotcake.jpg',
+                    onAddToCart: _addItemToCart,
                   ),
                   SizedBox(height: 10),
                   ProductItem(
                     name: 'Strawberry Cake',
                     price: '\$19.99',
                     imageUrl: 'images/strawberrycake.jpg',
+                    onAddToCart: _addItemToCart,
                   ),
                   SizedBox(height: 10),
                   ProductItem(
                     name: 'Marble Cake',
                     price: '\$12.99',
                     imageUrl: 'images/marblecake.jpg',
+                    onAddToCart: _addItemToCart,
                   ),
                   SizedBox(height: 10),
                   ProductItem(
                     name: 'Black Forest Cake',
                     price: '\$10.99',
                     imageUrl: 'images/blackforest.jpg',
+                    onAddToCart: _addItemToCart,
                   ),
                   // Add more ProductItems as needed
                 ],
@@ -151,17 +211,18 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
 class ProductItem extends StatelessWidget {
   final String name;
   final String price;
   final String imageUrl;
+  final Function(ProductItem) onAddToCart;
 
   const ProductItem({
     Key? key,
     required this.name,
     required this.price,
     required this.imageUrl,
+    required this.onAddToCart,
   }) : super(key: key);
 
   @override
@@ -194,7 +255,7 @@ class ProductItem extends StatelessWidget {
         ),
         trailing: IconButton(
           onPressed: () {
-            // Implement add to cart functionality
+            onAddToCart(this);
           },
           icon: Icon(Icons.shopping_cart),
         ),
